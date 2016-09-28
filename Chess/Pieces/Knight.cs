@@ -1,5 +1,4 @@
-﻿using Chess;
-using Chess.Pieces;
+﻿using Chess.Pieces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +7,12 @@ using static Chess.Util;
 
 namespace Chess
 {
-    public class King : Piece
+    public class Knight : Piece
     {
-        private int position;
-        private bool IsColor;
-        public List<int> Moves { get; set; }
 
-        public King()
+        public Knight()
         {
             Moves = new List<int>();
-            Moves.Add((int)Direction.Left);
-            Moves.Add((int)Direction.Right);
-            Moves.Add((int)Direction.Bottom);
-            Moves.Add((int)Direction.Top);
             Moves.Add((int)Direction.TopLeft);
             Moves.Add((int)Direction.TopRight);
             Moves.Add((int)Direction.BottomRight);
@@ -31,11 +23,7 @@ namespace Chess
         {
             var isDirectionValid = Moves.Contains((int)dir);
             var stepCount = 0;
-            return isDirectionValid && stepCount == 1;
-        }
-        public void move(Direction dir)
-        {
-
+            return isDirectionValid && stepCount==4;
         }
     }
 }

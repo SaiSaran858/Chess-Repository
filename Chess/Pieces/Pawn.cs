@@ -9,8 +9,6 @@ namespace Chess
 {
     public class Pawn : Piece
     {
-        public List<int> Moves { get; set; }
-
         public Pawn()
         {
             Moves = new List<int>();

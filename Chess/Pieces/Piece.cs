@@ -6,7 +6,7 @@ using static Chess.Util;
 
 namespace Chess.Pieces
 {
-    public class Piece
+    public abstract class Piece
     {
         public PieceType Type { get; set; }
 
@@ -14,14 +14,14 @@ namespace Chess.Pieces
         public List<int> Moves { get; set; }
 
 
-        public  static int GetLocation(int x, int y)
+        public static int GetLocation(int x, int y)
         {
             throw new Exception();
         }
 
-        public static Tuple<int,int> GetLocation(int location)
+        public static Tuple<int,int> GetLocation(int index)
         {
-            return new Tuple<int, int>(location / 8, location % 8);
+            return new Tuple<int, int>(index / 8, index % 8);
         }
     }
 }
